@@ -30,23 +30,11 @@ android {
         minSdk = 23
     }
 
-    testOptions {
-        unitTests.all {
-            useJUnitPlatform()
+}
 
-            testLogging {
-                events(
-                        "passed",
-                        "skipped",
-                        "failed",
-                        "standardOut",
-                        "standardError"
-                )
-                showStandardStreams = true
-            }
-
-            outputs.upToDateWhen { false }
-        }
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 
